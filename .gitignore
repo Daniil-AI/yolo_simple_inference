@@ -1,0 +1,8 @@
+# Directory
+**.idea**
+**__pycache__**
+**venv**
+/result
+
+# Files
+*.log
