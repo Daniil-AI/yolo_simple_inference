@@ -1,32 +1,42 @@
-## Simple inference for YOLO models
+##  🚀 YOLO Model Inference Simplified
 
-### Default structure
-*./metadata* - weights  
-*./data* - input video/images  
-*./result* - output video/images  
-*./run_simple_inference.py* - main code  
-*./utils/encryption.py* - code for encrypting/decrypting models  
-*./utils/pt2engine.py* - code for model export to engine  
-##### *./run_simple_inference.py* - start script
+A lightweight and easy-to-use inference pipeline for YOLO models with support for encrypted weights.
 
-### Arguments
-*--model* - weights file name  
-Default: multiclass_FHD_special_encrypted.pt  
-*--dummy_model* - path to dummy weights, nessesary if using encrypted weights  
-Default: "dummy_FHD.pt"  
-*--output_dir* - literally  
-Default: "result"  
-*--input_dir* - ...  
-Default: "data"  
-*--weights_dir* - ...  
-Default: "metadata"  
-*--img_w* - image width after resizing  
-Default: 1920  
-*--img_h* - image height after resizing  
-Default: 1088  
-*--conf* - confidence threshold  
-Default: 0.75  
-*--encrypted* - True if using encrypted weights  
-Default: True  
-*--save_video* - True for saving processed videos  
-Default: True  
+---
+
+## Project Structure
+```text
+├── metadata/               # Model weights
+├── data/                   # Input videos/images
+├── result/                 # Output videos/images
+├── run_simple_inference.py # Main inference script
+└── utils/
+    ├── encryption.py       # Model encryption/decryption utilities
+    └── pt2engine.py        # Model export to TensorRT engine
+```
+
+## Arguments Options
+Argument	Description	Default Value
+* **--model**	- Weights file name
+* **--dummy_model** -	Path to dummy weights (for decryption)	
+* **--output_dir** -	Output directory	
+* **--input_dir** -	Input directory	
+* **--weights_dir** -	Weights directory
+* **--img_w**	- Image width after resizing
+* **--img_h**	- Image height after resizing	
+* **--conf** - Confidence threshold	0.75
+* **--encrypted**	- Use encrypted weights	
+* **--save_video** - Save processed videos
+
+## 🛠️ Quick Start
+
+1. Place your model weights in `./metadata`
+2. Put input files in `./data`
+3. Run the inference:
+```bash
+python run_simple_inference.py \
+    --model my_model.pt \
+    --img_w 1280 \
+    --img_h 720 \
+    --conf 0.85
+```
