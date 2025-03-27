@@ -28,7 +28,7 @@ Argument	Description	Default Value
 * **--encrypted**	- Use encrypted weights	
 * **--save_video** - Save processed videos
 
-## 🛠️ Quick Start
+## Quick Start
 
 1. Place your model weights in `./metadata`
 2. Put input files in `./data`
